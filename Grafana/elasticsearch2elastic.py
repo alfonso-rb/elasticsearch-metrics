@@ -17,13 +17,19 @@ elasticMonitoringCluster = os.environ.get('ES_METRICS_MONITORING_CLUSTER_URL', '
 # Enable Elasticsearch Security
 # read_username and read_password for read ES cluster information
 # write_username and write_passowrd for write monitor metric to ES.
-read_es_security_enable = False
-read_username = "read_username"
-read_password = "read_password"
+#read_es_security_enable = False
+#read_username = "read_username"
+#read_password = "read_password"
+read_es_security_enable = os.environ.get('ES_METRICS_READ_SECURITY', 'False')
+read_username = os.environ.get('ES_METRICS_READ_USERNAME', 'read_username')
+read_password = os.environ.get('ES_METRICS_READ_PASSWORD', 'read_password')
 
-write_es_security_enable = False
-write_username = "write_username"
-write_password = "write_password"
+#write_es_security_enable = False
+#write_username = "write_username"
+#write_password = "write_password"
+write_es_security_enable = os.environ.get('ES_METRICS_WRITE_SECURITY', 'False')
+write_username = os.environ.get('ES_METRICS_WRITE_USERNAME', 'write_username')
+write_password = os.environ.get('ES_METRICS_WRITE_PASSWORD', 'write_password')
 
 def handle_urlopen(urlData, read_username, read_password):
     if read_es_security_enable: 
