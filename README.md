@@ -47,4 +47,4 @@ docker run -d -e ES_METRICS_CLUSTER_URL=http://search1.example.net:9200 \
 - code to grab credentials from vault
 
 ## Author Information
-Alfonso Brown - albrown@ea.com
+Alfonso Brown
