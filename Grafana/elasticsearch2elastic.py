@@ -34,13 +34,13 @@ write_password = os.environ.get('ES_METRICS_WRITE_PASSWORD', 'write_password')
 def handle_urlopen(urlData, read_username, read_password):
     if read_es_security_enable: 
       try:
-	password_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
+        password_mgr = urllib2.HTTPPasswordMgrWithDefaultRealm()
         password_mgr.add_password(None, urlData, read_username, read_password)
         handler = urllib2.HTTPBasicAuthHandler(password_mgr)
         opener = urllib2.build_opener(handler)
         urllib2.install_opener(opener)
         response = urllib2.urlopen(urlData)
-	return response
+        return response
       except Exception as e:
         print "Error:  {0}".format(str(e))
     else:
