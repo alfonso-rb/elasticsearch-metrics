@@ -44,7 +44,6 @@ docker run -d -e ES_METRICS_CLUSTER_URL=http://search1.example.net:9200 \
 ## To Do:
 - Docker compose file
 - Verify support for ES 7.0+
-- verify variable file functionality
 - code to grab credentials from vault
 
 ## Author Information
